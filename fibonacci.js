@@ -34,3 +34,28 @@ function fibsRec(number){
   return [...prev, nextNumber];
 }
 console.log(fibsRec(8))
+
+// n = 8 -> ANSWER: [0,1,1,2,3,5,8,13]
+
+// prev = fibsRec(7) = [0,1,1,2,3,5,8]
+// next = prev[prev.length - 1] + prev[prev.length - 2] =  prev[6] + prev[5] = 13
+
+// n = 7
+// prev = fibsRec(6) = [0,1,1,2,3,5]
+// next = prev[prev.length - 1] + prev[prev.length - 2] =  prev[5] + prev[4] = 8
+
+// n = 6
+// prev = fibsRec(5) = [0,1,1,2,3]
+// next = prev[prev.length - 1] + prev[prev.length - 2] =  prev[4] + prev[3] = 5
+
+// n = 5
+// prev = fibsRec(4) = [0,1,1,2]
+// next = prev[prev.length - 1] + prev[prev.length - 2] =  prev[3] + prev[2] = 3
+
+// n = 4
+// prev = fibsRec(3) = [0,1,1]
+// next = prev[prev.length - 1] + prev[prev.length - 2] = prev[2] + prev[1] = 2
+
+// n = 3
+// prev = fibsRec(2)= [0, 1]
+// next = prev[prev.length - 1] + prev[prev.length - 2] = prev[1] + prev[0] = 1
