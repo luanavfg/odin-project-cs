@@ -142,8 +142,6 @@ class LinkedList {
   }
 
   insertAt(value, index) {
-    // [2,4,6,7]
-    // 0, 1, 2, 3
     if(index > this.length) {
       this.tail = {
         value: value,
@@ -151,9 +149,9 @@ class LinkedList {
       }
       return this
     }
+
     let currentNode = this.head
     let newNode
-    let secondToNewNode;
     let i=0
 
     while(currentNode) {
@@ -163,10 +161,7 @@ class LinkedList {
           next: currentNode.next
         }
 
-        secondToNewNode = {
-          value: currentNode,
-          next: newNode
-        }
+        currentNode.next = newNode
 
         break
       }
@@ -187,7 +182,6 @@ list.append("cat");
 list.append("parrot");
 list.append("hamster");
 list.append("snake");
-list.preppend("turtle");
 list.insertAt('teste', 2)
 
 console.log(list)
