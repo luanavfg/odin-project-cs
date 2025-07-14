@@ -1,4 +1,4 @@
-export class LinkedList {
+class LinkedList {
   constructor(value) {
     this.head = {
       value: value,
@@ -140,6 +140,44 @@ export class LinkedList {
 
     console.log(arrayInString)
   }
+
+  insertAt(value, index) {
+    // [2,4,6,7]
+    // 0, 1, 2, 3
+    if(index > this.length) {
+      this.tail = {
+        value: value,
+        next: null
+      }
+      return this
+    }
+    let currentNode = this.head
+    let newNode
+    let secondToNewNode;
+    let i=0
+
+    while(currentNode) {
+      if (i === index-1) {
+        newNode = {
+          value: value,
+          next: currentNode.next
+        }
+
+        secondToNewNode = {
+          value: currentNode,
+          next: newNode
+        }
+
+        break
+      }
+
+      currentNode = currentNode.next
+      i++
+    }
+
+    this.length++
+    return this
+  }
 }
 
 
@@ -150,5 +188,6 @@ list.append("parrot");
 list.append("hamster");
 list.append("snake");
 list.preppend("turtle");
+list.insertAt('teste', 2)
 
-console.log(list.tail)
+console.log(list)
